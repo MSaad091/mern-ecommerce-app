@@ -1,0 +1,154 @@
+.home-hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(to right, rgba(15,23,42,0.9), rgba(15,23,42,0.6)),
+    url('../assets/cyber-monday-shopping-sales.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  max-width: 600px;
+  color: #f8fafc;
+  animation: slideUp 1.5s ease;
+}
+
+.hero-overlay h1 {
+  font-size: 52px;
+  font-weight: 800;
+}
+
+.hero-overlay h1 span {
+  color: #38bdf8;
+}
+
+.hero-overlay p {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #cbd5f5;
+}
+
+.hero-buttons {
+  margin-top: 35px;
+  display: flex;
+  gap: 20px;
+}
+
+.hero-buttons button {
+  padding: 14px 30px;
+  font-size: 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.shop-btn {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #020617;
+}
+
+.shop-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(56,189,248,0.4);
+}
+
+.explore-btn {
+  background: transparent;
+  color: #f8fafc;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.explore-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Floating Cards */
+.floating-cards {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.card {
+  position: absolute;
+  padding: 18px 28px;
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.15);
+  color: #f8fafc;
+  border: 1px solid rgba(255,255,255,0.2);
+  font-weight: 600;
+  animation: float 10s infinite ease-in-out;
+}
+
+.card1 { top: 15%; left: 10%; }
+.card2 { top: 45%; right: 12%; animation-delay: 3s; }
+.card3 { bottom: 15%; left: 35%; animation-delay: 6s; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-overlay h1 { font-size: 36px; }
+  .hero-overlay p { font-size: 16px; }
+}
+@media (max-width: 425px) {
+  .hero-overlay h1 { font-size: 36px; }
+  .hero-overlay p { font-size: 16px; }
+  .explore-btn{
+    width: 200px;
+    height: 60px;
+    margin-top: 100px;
+    margin-left: -200px;
+  }
+  .shop-btn{
+     width: 180px;
+    height: 60px;
+  }
+}
+@media (max-width: 375px) {
+  .hero-overlay h1 { font-size: 36px; }
+  .hero-overlay p { font-size: 16px; }
+  .explore-btn{
+    width: 170px;
+    height: 58px;
+    margin-top: 100px;
+    margin-left: -190px;
+  }
+  .shop-btn{
+     width: 170px;
+    height: 55px;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero-overlay h1 { font-size: 32px; }
+  .hero-overlay p { font-size: 16px; }
+  .explore-btn{
+    width: 170px;
+    height: 58px;
+    margin-top: 100px;
+    margin-left: -190px;
+  }
+  .shop-btn{
+     width: 170px;
+    height: 55px;
+  }
+}
+

@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== PAGE WRAPPER ===== */
+.update-product-container {
+  max-width: 650px;
+  margin: 110px auto 40px; /* navbar space */
+  background: #ffffff;
+  
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== HEADING ===== */
+.update-product-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #0b1d3a;
+  font-size: 26px;
+}
+
+/* ===== FORM ===== */
+.update-product-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== INPUTS ===== */
+.update-product-container input,
+.update-product-container textarea,
+.update-product-container select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #cfd8e3;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.update-product-container textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.update-product-container input:focus,
+.update-product-container textarea:focus,
+.update-product-container select:focus {
+  border-color: #1da1f2;
+  box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.15);
+}
+
+/* ===== FILE INPUT ===== */
+.update-product-container input[type="file"] {
+  padding: 8px;
+  background: #f8fafc;
+}
+
+/* ===== STATUS SELECT ===== */
+.update-product-container select {
+  cursor: pointer;
+  background: #f9fafb;
+}
+
+/* ===== BUTTON ===== */
+.update-product-container button {
+  margin-top: 10px;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #1da1f2, #38bdf8);
+  color: #000;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.update-product-container button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(29, 161, 242, 0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .update-product-container {
+    margin: 90px 16px 30px;
+    padding: 25px;
+  }
+
+  .update-product-container h2 {
+    font-size: 22px;
+  }
+}

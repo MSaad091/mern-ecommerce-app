@@ -1,0 +1,159 @@
+.create-product-page {
+  background-color: #f97316; /* lighter orange for modern look */
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.create-product-card {
+  margin-top: 50px;
+  background: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  padding: 30px 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+
+.create-product-card:hover {
+  transform: translateY(-5px);
+}
+
+.create-product-card h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: #0f172a;
+  text-align: center;
+}
+
+/* FORM */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+}
+
+.form-group textarea {
+  resize: none;
+  height: 90px;
+}
+
+/* FORM ROW */
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* CHECKBOX */
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.submit-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .create-product-card {
+    max-width: 90%;
+    padding: 25px 20px;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .create-product-card {
+    padding: 20px 15px;
+  }
+  .create-product-card h2 {
+    font-size: 22px;
+  }
+  .submit-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .create-product-card {
+    padding: 18px 12px;
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  .create-product-card {
+    width: 90%;      /* 95% se slightly chota lekin zyada readable */
+    max-width: none; /* remove max-width restriction */
+    padding: 20px 15px; /* thodi aur padding add ki */
+    margin-top: 40px;   /* top margin maintain kiya */
+  }
+
+  .create-product-card h2 {
+    font-size: 20px; /* thodi badi heading for readability */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;  /* readable input size */
+    padding: 10px;
+  }
+
+  .submit-btn {
+    padding: 12px;     /* button thoda bada rakha */
+    font-size: 15px;   /* readable button text */
+  }
+}

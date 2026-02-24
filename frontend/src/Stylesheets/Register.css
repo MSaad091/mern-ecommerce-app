@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= CONTAINER ================= */
+.auth-container {
+  min-height: calc(100vh - 80px); /* navbar height adjust */
+  width: 100%;
+  background: radial-gradient(circle at top, #0b1d3a, #020617);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 👈 top se start */
+  padding-top: 110px;      /* 👈 navbar overlap fix */
+  padding-bottom: 40px;
+}
+
+/* ================= CARD ================= */
+.auth-card {
+  width: 520px;        /* 👈 WIDTH FIX */
+  max-width: 95%;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= HEADINGS ================= */
+.auth-card h1 {
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 26px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* ================= FORM ================= */
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-card label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.auth-card input {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid #cfd8e3;
+  outline: none;
+}
+
+.auth-card input:focus {
+  border-color: #1da1f2;
+}
+
+/* ================= BUTTON ================= */
+.auth-card button {
+  width: 100%;
+  margin-top: 20px;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  background: #29b6f6;
+  color: #000;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-card button:hover {
+  background: #1da1f2;
+}
+
+/* ================= SWITCH LINK ================= */
+.switch-text {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.switch-text a {
+  color: #1da1f2;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.switch-text a:hover {
+  text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 425px) {
+  .auth-card {
+    width: 92%;
+    padding: 25px;
+  }
+
+  .auth-container {
+    padding-top: 90px;
+  }
+}
+@media (max-width: 375px) {
+  .auth-card h1{
+    font-size: 22px;
+  }
+
+  .auth-container {
+    padding-top: 90px;
+  }
+}
+@media (max-width: 320px) {
+  .auth-card h1{
+    font-size: 20px;
+  }
+
+  .auth-container {
+    padding-top: 90px;
+  }
+}

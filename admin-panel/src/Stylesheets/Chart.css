@@ -1,0 +1,58 @@
+.chart-page {
+  padding: 100px 24px;
+  background: firebrick;
+  width: 100vw;
+  
+}
+
+.chart-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 90%;
+  
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.chart-card h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.chart-wrapper {
+  height: 280px;
+}
+
+/* INFO PANEL */
+.chart-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.chart-info div {
+  text-align: center;
+}
+
+.chart-info span {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.chart-info strong {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* PROFIT / LOSS */
+.profit strong {
+  color: #16a34a;
+}
+
+.loss strong {
+  color: #dc2626;
+}

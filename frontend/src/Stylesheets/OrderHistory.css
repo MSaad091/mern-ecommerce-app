@@ -1,0 +1,96 @@
+.order-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.order-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.order-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* HEADER */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.order-id,
+.order-total {
+  font-size: 15px;
+}
+
+/* STATUS */
+.order-status {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.pending {
+  color: orange;
+  font-weight: bold;
+  margin-left: 6px;
+}
+
+.delivered {
+  color: green;
+  font-weight: bold;
+  margin-left: 6px;
+}
+
+/* ITEMS */
+.order-item {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.order-item p {
+  margin: 5px 0;
+}
+
+.center-text {
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* ✅ MOBILE FIX (425px & below) */
+@media (max-width: 425px) {
+
+  .order-card {
+    padding: 15px;
+  }
+
+  .order-header {
+    flex-direction: column;   /* 👈 stack ho jayega */
+    gap: 8px;
+  }
+
+  .order-id,
+  .order-total {
+    word-break: break-all;   /* 👈 long ID wrap hogi */
+    font-size: 14px;
+  }
+
+  .order-status {
+    font-size: 14px;
+  }
+}
+@media (max-width:320px){
+  .order-id{
+    font-size: 13px;
+  }
+}
