@@ -7,7 +7,7 @@ import axios from 'axios'
 //     withCredentials:true
 // });
 const api = axios.create({
-  baseURL:"http://localhost:4000/user",
+  baseURL:"http://localhost:4000/admin",
   withCredentials:true
 });
 
