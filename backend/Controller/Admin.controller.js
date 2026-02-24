@@ -271,8 +271,8 @@ res
   .status(200)
   .cookie("accessToken", token, {
     httpOnly: true,
-    secure: false,   // localhost
-    sameSite: "lax"  // localhost safe
+  secure: true,       // HTTPS required on Render
+  sameSite: "none"   // localhost safe
   })
   .json({
     success: true,
