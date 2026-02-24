@@ -5,15 +5,12 @@ import userRouter from "./routes/user.routes.js";
 import cors from "cors";
 const app = express();
 
-// app.use(cors({
-//     origin: "http://localhost:5173",
-//     credentials: true
-// }));
+
 
 app.use(cors({
   origin: [
-    "http://localhost:5173",
-    "http://localhost:5174"
+    "https://mern-ecommerce-app-swrd.vercel.app", //adminpanel
+    "https://mern-ecommerce-app-psi.vercel.app" // frontend
   ],
   credentials: true
 }))
