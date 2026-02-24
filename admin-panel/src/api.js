@@ -8,7 +8,7 @@ import axios from 'axios'
 // });
 const api = axios.create({
 <<<<<<< HEAD
-  baseURL:"http://localhost:4000/admin",
+
 =======
   baseURL:"https://mern-ecommerce-app-ncuh.onrender.com/admin",
 >>>>>>> 7a362e2 (Initial commit)
