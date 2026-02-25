@@ -2,11 +2,21 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import '../Stylesheets/Navbar.css'
+import { logoutUSer } from "../api";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
   
-
+const handleLogout = async() => {
+  try {
+    const res = await logoutUSer()
+    console.log(res.data);
+    
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
   return (
     <>
       <nav className="navbar">
@@ -24,6 +34,7 @@ function Navbar() {
             <li><Link to="/create-product">Create</Link></li>
             <li><Link to="/order-chart">Sales</Link></li>
             <li className="nav-btn"><Link to="/">Login</Link></li>
+            <li className="nav-btn"><Link to="/" onClick={handleLogout}>LogOut</Link></li>
           </ul>
 
           {/* MENU BUTTON FOR MOBILE */}

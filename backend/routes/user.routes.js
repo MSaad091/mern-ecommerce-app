@@ -42,6 +42,7 @@ router.get("/validate", verifyJwt, (req, res) => {
 router.route("/logout").post(verifyJwtes,logoutUser)
 
 
+
 // import express from "express";
 
 

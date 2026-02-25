@@ -29,6 +29,7 @@ export const ProductUpdate = (id,formdata) => api.put(`/update/${id}`,formdata)
 export const allOrder = () => api.get('/allorder')
 export const OrderStatus = (id) => api.put(`/order/${id}`);
 export const allOrdercount = () => api.get('allorder')
+export const logoutUSer  = () => api.post(`/logout`)
 
 
 
