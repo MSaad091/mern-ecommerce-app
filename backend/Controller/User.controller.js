@@ -189,8 +189,7 @@ accessToken:undefined
  )
  const options = {
   httpOnly:true,
-  secure:true,
-    sameSite: "none"
+  secure:false
  }
  return res.status(200)
  .clearCookie("accessToken",options)
