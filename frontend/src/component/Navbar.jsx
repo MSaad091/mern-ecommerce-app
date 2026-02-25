@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaShoppingBag, FaBars, FaTimes } from "react-icons/fa";
 import "../Stylesheets/Navbar.css";
+import { LoGOutUser } from "../Api";
 
 
 function Navbar() {
@@ -9,11 +10,21 @@ function Navbar() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
-    setOpen(false);
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem("token");
+  //   navigate("/login");
+  //   setOpen(false);
+  // };
+  const handleLogout = async() => {
+    try {
+      const res = await LoGOutUser()
+      console.log(res.data);
+      
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
  
 
   return (

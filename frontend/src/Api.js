@@ -25,7 +25,7 @@ export const  Cart = () => api.get('/cart')
 export const RemoveCart = (data) => api.post('/remove',data)
 export const CheckOut = () => api.post('/checkout');
 export const OrderHistory = () => api.get('/history')
-export const LogOutUser = () => api.post('/logout')
+export const LoGOutUser = () => api.post('/logout')
 
 
 
