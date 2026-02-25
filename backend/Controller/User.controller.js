@@ -97,9 +97,9 @@ const LoginUser = async (req, res) => {
     // Cookie options
     // const options = { httpOnly: true, secure: true }; // localhost
     const options = {
-  httpOnly: true,
-  secure: false,   // must be false on localhost
-  sameSite: "lax"  // allows cookie to be sent from frontend
+     httpOnly: true,
+  secure: true,       // HTTPS required on Render
+  sameSite: "none"   // allows cookie to be sent from frontend
 };
 
  
