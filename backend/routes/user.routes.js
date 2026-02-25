@@ -40,6 +40,7 @@ router.get("/validate", verifyJwt, (req, res) => {
   res.json({ success: true, message: "Token valid" });
 });
 router.route("/logout").post(verifyJwtes,logoutUser)
+router.route('/logout').post(verifyJwt,logoutUser)   
 
 
 
