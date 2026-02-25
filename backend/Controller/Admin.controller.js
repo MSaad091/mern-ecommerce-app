@@ -206,11 +206,36 @@ const addToCart = async (req, res) => {
 };
 
 // Get Cart
+// const getCart = async (req, res) => {
+//   try {
+//     const userId = req.user._id;
+//     const cart = await Cart.findOne({ user: userId }).populate("products.productId");
+//     return res.status(200).json({ success: true, data: cart });
+//   } catch (error) {
+//     console.log(error);
+//     return res.status(500).json({ success: false, message: "Internal Server Error" });
+//   }
+// };
 const getCart = async (req, res) => {
   try {
     const userId = req.user._id;
-    const cart = await Cart.findOne({ user: userId }).populate("products.productId");
+
+    let cart = await Cart.findOne({ user: userId })
+      .populate("products.productId");
+
+    if (!cart) {
+      return res.status(200).json({ success: true, data: null });
+    }
+
+    
+    cart.products = cart.products.filter(
+      (item) => item.productId !== null
+    );
+
+    await cart.save();
+
     return res.status(200).json({ success: true, data: cart });
+
   } catch (error) {
     console.log(error);
     return res.status(500).json({ success: false, message: "Internal Server Error" });
