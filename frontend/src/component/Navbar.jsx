@@ -15,16 +15,27 @@ function Navbar() {
   //   navigate("/login");
   //   setOpen(false);
   // };
-  const handleLogout = async() => {
-    try {
-      const res = await LoGOutUser()
-      console.log(res.data);
+  // const handleLogout = async() => {
+  //   try {
+  //     const res = await LoGOutUser()
+  //     console.log(res.data);
       
-    } catch (error) {
-      console.log(error);
+  //   } catch (error) {
+  //     console.log(error);
       
-    }
+  //   }
+  // }
+  const handleLogout = async () => {
+  try {
+    const res = await LoGOutUser();
+    console.log(res.data);
+    localStorage.removeItem("token");
+    navigate("/login");
+  } catch (err) {
+    console.log(err);
+    alert("Logout failed!");
   }
+};
  
 
   return (
