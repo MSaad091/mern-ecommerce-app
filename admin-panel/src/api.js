@@ -10,7 +10,7 @@ const api = axios.create({
 <<<<<<< HEAD
 
 =======
-  baseURL:"https://mern-ecommerce-app-ncuh.onrender.com/admin",
+  baseURL:"https://mern-ecommerce-app-ncuh.onrender.com/user",
 >>>>>>> 7a362e2 (Initial commit)
   withCredentials:true
 });
