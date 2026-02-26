@@ -14,7 +14,7 @@ function Login() {
     try {
       setLoading(true)
       const request = await AdminLogin({ email, password });
-      await new Promise((resolve) => setTimeout(resolve,3000))
+      await new Promise((resolve) => setTimeout(resolve,1000))
       const response = request.data;
 
 

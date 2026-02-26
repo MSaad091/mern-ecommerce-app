@@ -34,6 +34,8 @@ function UpdateProduct() {
 
        
       const res = await ProductUpdate(id, formData);
+
+      await new Promise((resolve) => setTimeout(resolve,1000))
       
       console.log(res.data.data);
 

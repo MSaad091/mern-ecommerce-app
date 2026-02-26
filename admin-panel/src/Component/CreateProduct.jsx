@@ -28,6 +28,7 @@ function CreateProduct() {
 
       await createProduct(formData);
       alert("Product created successfully");
+      await new Promise((resolve) => setTimeout(resolve,1000))
 
       setTitle("");
       setDescription("");
