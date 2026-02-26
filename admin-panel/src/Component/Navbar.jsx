@@ -37,10 +37,11 @@ const handleLogout = async() => {
           
             {
               token ? (
-                <li className="nav-btn"><Link to="/" onClick={handleLogout}>LogOut</Link></li>
+               
+                <Link to="/" className="nav-btn" onClick={() => setOpen(false)}>Login</Link>
               ): (
                 <>
-                  <li className="nav-btn"><Link to="/">Login</Link></li>
+                 <li className="nav-btn"><Link to="/" onClick={handleLogout}>LogOut</Link></li>
                 </>
               )
             }
@@ -70,10 +71,11 @@ const handleLogout = async() => {
         
         {
           token ? (
-              <li className="nav-btn"><Link to="/" onClick={handleLogout}>LogOut</Link></li>
+          <Link to="/" className="nav-btn" onClick={() => setOpen(false)}>Login</Link>
           ) : (
             <>
-                <Link to="/" className="nav-btn" onClick={() => setOpen(false)}>Login</Link>
+                
+                <li className="nav-btn"><Link to="/" onClick={handleLogout}>LogOut</Link></li>
             </>
           )
         }
