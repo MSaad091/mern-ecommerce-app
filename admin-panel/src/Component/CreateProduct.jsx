@@ -91,7 +91,7 @@ function CreateProduct() {
 
           <button type="submit" className="submit-btn">
           {
-            loading ? "Creating" : "  Create Product"
+            loading ? "Creating ..." : "  Create Product"
           }
           </button>
         </form>

@@ -6,6 +6,7 @@ import { logoutUSer } from "../api";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const token = localStorage.getItem("token")
   
 const handleLogout = async() => {
   try {
@@ -33,8 +34,16 @@ const handleLogout = async() => {
             <li><Link to="/order">Orders</Link></li>
             <li><Link to="/create-product">Create</Link></li>
             <li><Link to="/order-chart">Sales</Link></li>
-            <li className="nav-btn"><Link to="/">Login</Link></li>
-            <li className="nav-btn"><Link to="/" onClick={handleLogout}>LogOut</Link></li>
+          
+            {
+              token ? (
+                <li className="nav-btn"><Link to="/" onClick={handleLogout}>LogOut</Link></li>
+              ): (
+                <>
+                  <li className="nav-btn"><Link to="/">Login</Link></li>
+                </>
+              )
+            }
           </ul>
 
           {/* MENU BUTTON FOR MOBILE */}
@@ -57,7 +66,17 @@ const handleLogout = async() => {
         <Link to="/order" onClick={() => setOpen(false)}>Orders</Link>
         <Link to="/create-product" onClick={() => setOpen(false)}>Create</Link>
         <Link to="/order-chart" onClick={() => setOpen(false)}>Sales</Link>
-        <Link to="/" className="nav-btn" onClick={() => setOpen(false)}>Login</Link>
+    
+        
+        {
+          token ? (
+              <li className="nav-btn"><Link to="/" onClick={handleLogout}>LogOut</Link></li>
+          ) : (
+            <>
+                <Link to="/" className="nav-btn" onClick={() => setOpen(false)}>Login</Link>
+            </>
+          )
+        }
       </aside>
     </>
   );

@@ -20,6 +20,7 @@ function Login() {
 
       if (response.success) {
         navigate("/dashboard");
+        localStorage.setItem("token")
         
         
       }
