@@ -6,19 +6,27 @@ import "../Stylesheets/Login.css";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading,setLoading] = useState(false)
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true)
       const request = await AdminLogin({ email, password });
+      await new Promise((resolve) => setTimeout(resolve,3000))
       const response = request.data;
+
 
       if (response.success) {
         navigate("/dashboard");
+        
+        
       }
     } catch (error) {
       console.log(error);
+    } finally{
+setLoading(false)
     }
   };
 
@@ -45,7 +53,11 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button type="submit">Login</button>
+          <button type="submit">
+            {
+              loading ? "Logging..." : "Login"
+            }
+          </button>
         </form>
       </div>
     </div>

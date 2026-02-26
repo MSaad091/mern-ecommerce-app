@@ -10,11 +10,13 @@ function CreateProduct() {
   const [category, setCategory] = useState("");
   const [isActive, setIsActive] = useState(true);
   const [image, setImage] = useState(null);
+  const [loading,setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
+      setLoading(true)
       const formData = new FormData();
       formData.append("title", title);
       formData.append("description", description);
@@ -37,6 +39,8 @@ function CreateProduct() {
     } catch (error) {
       console.log(error);
       alert("Error creating product");
+    }finally{
+      setLoading(false)
     }
   };
 
@@ -86,7 +90,9 @@ function CreateProduct() {
           </div>
 
           <button type="submit" className="submit-btn">
-            Create Product
+          {
+            loading ? "Creating" : "  Create Product"
+          }
           </button>
         </form>
       </div>

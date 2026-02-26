@@ -14,11 +14,13 @@ function UpdateProduct() {
   const [category, setCategory] = useState("");
   const [isActive, setIsActive] = useState(true);
   const [image, setImage] = useState(null);
+  const [loading,setLoading] = useState(false)
 
   const updateProduct = async (e) => {
     e.preventDefault();
 
     try {
+      setLoading(true)
       const formData = new FormData();
       formData.append("title", title);
       formData.append("description", description);
@@ -30,14 +32,20 @@ function UpdateProduct() {
         formData.append("image", image);
       }
 
+       
       const res = await ProductUpdate(id, formData);
+      
       console.log(res.data.data);
+
+      await new Promise((resolve) => setTimeout(resolve,3000))
 
       alert("Product Updated Successfully ✅");
       navigate("/products"); // admin list page
     } catch (error) {
       console.log(error);
       alert("Update failed ❌");
+    } finally{
+      setLoading(false)
     }
   };
 
@@ -97,7 +105,10 @@ function UpdateProduct() {
           <option value="false">Inactive</option>
         </select>
 
-        <button type="submit">Update Product</button>
+        <button type="submit">{
+
+          loading ? "Updating...." : "Update Product"
+}</button>
       </form>
     </div>
   );
