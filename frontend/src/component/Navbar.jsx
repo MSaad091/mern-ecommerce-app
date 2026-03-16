@@ -10,11 +10,11 @@ function Navbar() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
-  // const handleLogout = () => {
-  //   localStorage.removeItem("token");
-  //   navigate("/login");
-  //   setOpen(false);
-  // };
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+    setOpen(false);
+  };
   // const handleLogout = async() => {
   //   try {
   //     const res = await LoGOutUser()
@@ -25,17 +25,17 @@ function Navbar() {
       
   //   }
   // }
-  const handleLogout = async () => {
-  try {
-    const res = await LoGOutUser();
-    console.log(res.data);
-    localStorage.removeItem("token");
-    navigate("/login");
-  } catch (err) {
-    console.log(err);
-    alert("Logout failed!");
-  }
-};
+//   const handleLogout = async () => {
+//   try {
+//     const res = await LoGOutUser();
+//     console.log(res.data);
+//     localStorage.removeItem("token");
+//     navigate("/login");
+//   } catch (err) {
+//     console.log(err);
+//     alert("Logout failed!");
+//   }
+// };
  
 
   return (
