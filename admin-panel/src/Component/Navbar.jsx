@@ -1,30 +1,29 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import "../Stylesheets/Navbar.css";
+import '../Stylesheets/Navbar.css'
 import { logoutUSer } from "../api";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const token = localStorage.getItem("token")
   const location = useLocation();
-  const token = localStorage.getItem("token");
+  
 
-  // ✅ Hide Navbar on Auth pages
-  if (location.pathname === "/") {
+   if (location.pathname === "/") {
     return null;
   }
 
-  // 🔥 Logout Function
-  const handleLogout = async () => {
-    try {
-      await logoutUSer();
-      localStorage.removeItem("token");
-      window.location.href = "/login"; // redirect
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+const handleLogout = async() => {
+  try {
+    const res = await logoutUSer()
+    console.log(res.data);
+    
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
   return (
     <>
       <nav className="navbar">
@@ -41,23 +40,22 @@ function Navbar() {
             <li><Link to="/order">Orders</Link></li>
             <li><Link to="/create-product">Create</Link></li>
             <li><Link to="/order-chart">Sales</Link></li>
-
-            {/* ✅ FIXED LOGIC */}
-            {token ? (
-              <li className="nav-btn">
-               <Link to="/login">Login</Link>
-              </li>
-            ) : (
-              <li className="nav-btn">
+          
+            {
+              token ? (
                
-                 <button onClick={handleLogout}>Logout</button>
-              </li>
-            )}
+                <Link to="/" className="nav-btn" onClick={() => setOpen(false)}>Login</Link>
+              ): (
+                <>
+                 <li className="nav-btn"><Link to="/" onClick={handleLogout}>LogOut</Link></li>
+                </>
+              )
+            }
           </ul>
 
-          {/* MOBILE BUTTON */}
+          {/* MENU BUTTON FOR MOBILE */}
           <button className="menu-btn" onClick={() => setOpen(true)}>
-            <FaBars size={24} color="#38bdf8" />
+            <FaBars size={24} color="#38bdf8"/>
           </button>
         </div>
       </nav>
@@ -70,23 +68,23 @@ function Navbar() {
         <button className="close-btn" onClick={() => setOpen(false)}>
           <FaTimes />
         </button>
-
         <Link to="/dashboard" onClick={() => setOpen(false)}>Home</Link>
         <Link to="/products" onClick={() => setOpen(false)}>Products</Link>
         <Link to="/order" onClick={() => setOpen(false)}>Orders</Link>
         <Link to="/create-product" onClick={() => setOpen(false)}>Create</Link>
         <Link to="/order-chart" onClick={() => setOpen(false)}>Sales</Link>
-
-        {/* ✅ SAME FIX HERE */}
-        {token ? (
-          <button className="nav-btn" onClick={handleLogout}>
-            Logout
-          </button>
-        ) : (
-          <Link to="/login" className="nav-btn" onClick={() => setOpen(false)}>
-            Login
-          </Link>
-        )}
+    
+        
+        {
+          token ? (
+          <Link to="/" className="nav-btn" onClick={() => setOpen(false)}>Login</Link>
+          ) : (
+            <>
+                
+                <li className="nav-btn"><Link to="/" onClick={handleLogout}>LogOut</Link></li>
+            </>
+          )
+        }
       </aside>
     </>
   );
