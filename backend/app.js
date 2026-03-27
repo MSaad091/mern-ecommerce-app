@@ -10,7 +10,8 @@ const app = express();
 app.use(cors({
   origin: [
     "https://mern-ecommerce-app-swrd.vercel.app", //adminpanel
-    "https://mern-ecommerce-app-psi.vercel.app" // frontend
+    "https://mern-ecommerce-app-psi.vercel.app" ,// frontend
+  
   ],
   credentials: true
 }))

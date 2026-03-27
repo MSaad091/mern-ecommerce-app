@@ -11,6 +11,7 @@ const api = axios.create({
 
 
   baseURL:"https://mern-ecommerce-app-ncuh.onrender.com/user",
+  
   withCredentials:true
 });
 
