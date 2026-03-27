@@ -45,11 +45,12 @@ function Navbar() {
             {/* ✅ FIXED LOGIC */}
             {token ? (
               <li className="nav-btn">
-                <button onClick={handleLogout}>Logout</button>
+               <Link to="/login">Login</Link>
               </li>
             ) : (
               <li className="nav-btn">
-                <Link to="/login">Login</Link>
+               
+                 <button onClick={handleLogout}>Logout</button>
               </li>
             )}
           </ul>
