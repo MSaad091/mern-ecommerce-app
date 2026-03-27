@@ -1,90 +1,189 @@
+/* 🌐 Container */
 .admin-product-container {
   padding: 20px;
+  background: #f8f9fa;
+  min-height: 100vh;
 }
 
+/* 🏷 Title */
 .page-title {
   text-align: center;
   margin-bottom: 30px;
   font-size: 28px;
   font-weight: bold;
+  color: #333;
 }
 
+/* 📦 Grid Layout (Auto Responsive) */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* ✅ force 4 columns */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
+/* 🧾 Card */
 .product-card {
-  background: #f3efef;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
+/* 🖼 Image */
 .product-image {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
 
+/* ℹ Info */
 .product-info {
   padding: 15px;
+  flex: 1;
 }
 
 .product-info h3 {
-  margin: 0 0 8px;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #222;
 }
 
 .category {
-  font-size: 14px;
-  color: #666;
+  font-size: 13px;
+  color: #888;
 }
 
 .price {
   font-weight: bold;
-  margin-top: 5px;
+  color: #0d6efd;
+  margin-top: 6px;
 }
 
 .stock {
-  font-size: 14px;
-  margin-top: 3px;
+  font-size: 13px;
+  margin-top: 4px;
+  color: #444;
 }
 
+/* 🔘 Actions */
 .product-actions {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   padding: 12px;
   border-top: 1px solid #eee;
 }
 
+/* ✏ Update Button */
 .update-btn {
-  background-color: #0d6efd;
+  flex: 1;
+  background: linear-gradient(135deg, #0d6efd, #4dabf7);
   color: white;
   border: none;
-  padding: 6px 12px;
-  border-radius: 5px;
+  padding: 8px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .update-btn:hover {
-  background-color: #084298;
+  background: linear-gradient(135deg, #084298, #339af0);
 }
 
+/* 🗑 Delete Button */
 .delete-btn {
-  background-color: #dc3545;
+  flex: 1;
+  background: linear-gradient(135deg, #dc3545, #ff6b6b);
   color: white;
   border: none;
-  padding: 6px 12px;
-  border-radius: 5px;
+  padding: 8px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .delete-btn:hover {
-  background-color: #a71d2a;
+  background: linear-gradient(135deg, #a71d2a, #fa5252);
+}
+
+/* -------------------- */
+/* 📱 RESPONSIVENESS */
+/* -------------------- */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 24px;
+  }
+
+  .product-image {
+    height: 160px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .admin-product-container {
+    padding: 15px;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+
+  .product-info h3 {
+    font-size: 16px;
+  }
+
+  .product-actions {
+    flex-direction: column;
+  }
+
+  .update-btn,
+  .delete-btn {
+    width: 100%;
+  }
+}
+
+/* Small Mobile (320px) */
+@media (max-width: 320px) {
+  .admin-product-container {
+    padding: 10px;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+
+  .product-image {
+    height: 140px;
+  }
+
+  .product-info {
+    padding: 10px;
+  }
+
+  .product-info h3 {
+    font-size: 14px;
+  }
+
+  .price,
+  .stock,
+  .category {
+    font-size: 12px;
+  }
+
+  .update-btn,
+  .delete-btn {
+    font-size: 12px;
+    padding: 7px;
+  }
 }
