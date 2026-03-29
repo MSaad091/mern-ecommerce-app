@@ -138,7 +138,7 @@ function Login() {
           />
 
           <button type="submit" disabled={loading}>
-            {loading ? "Loading..." : "Login"}
+            {loading ? "Loging..." : "Login"}
           </button>
 
           <p className="register-text">
